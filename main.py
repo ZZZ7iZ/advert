@@ -8,8 +8,8 @@ from kvsqlite.sync import Client
  
 bot = telebot.TeleBot(Config.TG_BOT_TOKEN, num_threads=90, skip_pending=True, parse_mode='html')
 db = Client('data.sqlite')
-c = -1001636427761
-back = types.InlineKeyboardMarkup().add(types.InlineKeyboardButton('⦅ رجوع ⦆', callback_data='back'))
+c = -1001959976143
+back = types.InlineKeyboardMarkup().add(types.InlineKeyboardButton('‹ رجوع ›', callback_data='back'))
 logs = ['creator', 'member', 'administrator']
 def force(user_id, channel):
   b = bot.get_chat_member(chat_id=c, user_id=user_id)
@@ -84,7 +84,7 @@ def check_hour():
 def start(message):
     chat_id = str(message.from_user.id)
     keys = types.InlineKeyboardMarkup(row_width=2)
-    btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('⦅ طلب تمويل جديد ⦆', callback_data='newpromote'), types.InlineKeyboardButton('⦅ تمويلاتي ⦆', callback_data='mypromote'), types.InlineKeyboardButton('⦅ حسابك ⦆', callback_data='acc'), types.InlineKeyboardButton('⦅ شروط الاستخدام ⦆', callback_data='tos'), types.InlineKeyboardButton('⦅ لشراء تمويل ⦆', callback_data='pay')
+    btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('‹ بدء تمويل جديد ›', callback_data='newpromote'), types.InlineKeyboardButton('‹ تمويلاتي ›', callback_data='mypromote'), types.InlineKeyboardButton('‹ حسابك ›', callback_data='acc'), types.InlineKeyboardButton('‹ شروط الاستخدام ›', callback_data='tos'), types.InlineKeyboardButton('‹ لشراء تمويل ›', callback_data='pay')
     keys.add(btn1)
     keys.add(btn3, btn2)
     keys.add(btn4)
@@ -222,7 +222,7 @@ def handler_calls(call):
         return
     if call.data == 'back':
         keys = types.InlineKeyboardMarkup(row_width=2)
-        btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('⦅ طلب تمويل جديد ⦆', callback_data='newpromote'), types.InlineKeyboardButton('⦅ تمويلاتي ⦆', callback_data='mypromote'), types.InlineKeyboardButton('⦅ حسابك ⦆', callback_data='acc'), types.InlineKeyboardButton('⦅ شروط الاستخدام ⦆', callback_data='tos'), types.InlineKeyboardButton('⦅ لشراء تمويل ⦆', callback_data='pay')
+        btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('‹ بدء تمويل جديد ›', callback_data='newpromote'), types.InlineKeyboardButton('‹ تمويلاتي ›', callback_data='mypromote'), types.InlineKeyboardButton('‹ حسابك ›', callback_data='acc'), types.InlineKeyboardButton('‹ شروط الاستخدام ›', callback_data='tos'), types.InlineKeyboardButton('‹ لشراء تمويل ›', callback_data='pay')
         keys.add(btn1)
         keys.add(btn3, btn2)
         keys.add(btn4)
@@ -231,17 +231,17 @@ def handler_calls(call):
         return
     if call.data == 'pay':
         r = '''
--︙مرحبا اذا لم تستطع تجميع النقاط عن طريق رابط الدعوه.
--︙الحل ف الحل الوحيد هو شراء تمويل من المطور. 
--︙ملحوظه نحن غير مسؤولون عن اي عمليات بيع من اي شخص اخر.
--︙التواصل يمكنك التواصل مع المطور من هنا @UP_UO لشراء تمويل.
--︙اخيرا شكرا لكم علي ثقتكم بنا.
+-︙ مرحبا اذا لم تستطع تجميع النقاط عن طريق رابط الدعوه.
+-︙ الحل ف الحل الوحيد هو شراء تمويل من المطور. 
+-︙ ملحوظه نحن غير مسؤولون عن اي عمليات بيع من اي شخص اخر.
+-︙ التواصل يمكنك التواصل مع المطور من هنا @IIIlIIv لشراء تمويل.
+-︙ اخيرا شكرا لكم علي ثقتكم بنا.
         '''
         bot.edit_message_text(text=r, chat_id=chat_id, message_id=call.message.id, reply_markup=back)
         return    
     if call.data == 'back':
         keys = types.InlineKeyboardMarkup(row_width=2)
-        btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('⦅ طلب تمويل جديد ⦆', callback_data='newpromote'), types.InlineKeyboardButton('⦅ تمويلاتي ⦆', callback_data='mypromote'), types.InlineKeyboardButton('⦅ حسابك ⦆', callback_data='acc'), types.InlineKeyboardButton('⦅ شروط الاستخدام ⦆', callback_data='tos'), types.InlineKeyboardButton('⦅ لشراء تمويل ⦆', callback_data='pay')
+        btn1, btn2, btn3, btn4, btn5 = types.InlineKeyboardButton('‹ بدء تمويل جديد ›', callback_data='newpromote'), types.InlineKeyboardButton('‹ تمويلاتي ›', callback_data='mypromote'), types.InlineKeyboardButton('‹ حسابك ›', callback_data='acc'), types.InlineKeyboardButton('‹ شروط الاستخدام ›', callback_data='tos'), types.InlineKeyboardButton('‹ لشراء تمويل ›', callback_data='pay')
         keys.add(btn1)
         keys.add(btn3, btn2)
         keys.add(btn4)
@@ -315,7 +315,7 @@ def stat(m):
 @bot.message_handler(regexp='/add (.*)')
 def e(m):
     id, coin = m.text.split('/add')[1].split('_')
-    if m.from_user.id == 6673736816:
+    if m.from_user.id == 5012406813:
         d = db.get(id)
         try:
             d['coin']+=int(coin)

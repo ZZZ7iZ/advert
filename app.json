@@ -11,7 +11,7 @@
 	"repository": "https://github.com/Source-Ze/advert",
     "env": {
         "TG_BOT_TOKEN": {
-            "description": "Your Telegram Bot Token from @BotFather",
+            "description": "6098937182:AAH5FfJqfmj1zhqRJh58J9duOQ2kB13SUjA",
             "value": ""
 	   }
 	},
